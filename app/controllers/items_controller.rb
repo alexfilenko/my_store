@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
 	def show
 		@item = Item.where(id: params[:id]).first
+		render "items/show"
 	end
 
 	def new
