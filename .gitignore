@@ -15,3 +15,13 @@
 /log/*
 !/log/.keep
 /tmp
+
+*.xml
+
+.idea/my_store.iml
+
+.idea/.rakeTasks
+
+.idea/.name
+
+.idea/.generators
