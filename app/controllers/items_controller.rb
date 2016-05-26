@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 	end
 
 	def show
-		Item.where(id: params[:id]).first
+		@item = Item.where(id: params[:id]).first
 	end
 
 	def new
