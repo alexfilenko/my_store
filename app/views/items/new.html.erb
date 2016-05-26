@@ -2,12 +2,12 @@
 
 <%= form_for Item.new do |f| %>
 
-	<%= f.text_field :price %>
-	<%= f.text_field :name %>
-	<%= f.text_field :description %>
-	<%= f.text_field :weight %>
+	<p>Цена: <br/><%= f.text_field :price %></p>
+	<p>Название: <br/><%= f.text_field :name %></p>
+	<p>Описание: <br/><%= f.text_field :description %></p>
+	<p>Вес: <br/><%= f.text_field :weight %></p>
 
-	<p><%= f.submit %></p>
+	<p><%= f.submit "Создать товар" %></p>
 
 
 
