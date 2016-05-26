@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		render text: "item created"
+		render text: params.inspect
 	end
 
 	def show
@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
 	end
 
 	def new
+
 	end
 
 	def edit
