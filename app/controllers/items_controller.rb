@@ -4,7 +4,13 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		render text: params.inspect
+		item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
+		@item = Item.create(item_params)
+		if @item.errors.empty?
+			redirect_to item_path(@item)
+		else
+			render "new"
+		end
 	end
 
 	def show
