@@ -31,9 +31,9 @@ class ItemsController < ApplicationController
 	end
 
 	def update
-		item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
+		#item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
 		@item = Item.find(params[:id])
-		@items.update_attributes(params[:item])
+		@item.update_attributes(params[:item]).permit(:price, :name, :real, :weight, :description)
 		if @item.errors.empty?
 			redirect_to item_path(@item)
 		else
