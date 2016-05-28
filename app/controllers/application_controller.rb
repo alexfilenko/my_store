@@ -13,4 +13,9 @@ private
   	render file: "public/404.html", ststus: 404
   end
 
+
+	def check_if_admin
+		render_403 unless params[:admin]
+	end
+
 end
