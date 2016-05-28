@@ -66,7 +66,7 @@ before_filter :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 	private
 
 	def find_item
-		@item = Item.where(params[:id]).first
+		@item = Item.where(id: params[:id]).first
 		render_404 unless @item
 	end
 
