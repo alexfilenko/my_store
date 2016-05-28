@@ -66,11 +66,12 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 	private
 
 	def find_item
-		@item = Item.find(params[:id])
+		@item = Item.where(params[:id]).first
+		render_404 unless @item
 	end
 
 	def check_if_admin
-		render text: "Access denied", ststus: 403 unless params[:admin] #current_user.admin == true
+		render_403 unless params[:admin]
 	end
 
 
