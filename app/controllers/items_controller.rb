@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
 
 
-before_filter :find_item, only: [:show, :edit, :update, :destroy]
+before_filter :find_item,	   only: [:show, :edit, :update, :destroy]
+before_filter :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 
 
 
@@ -55,6 +56,9 @@ before_filter :find_item, only: [:show, :edit, :update, :destroy]
 	def find_item
 		@item = Item.find(params[:id])
 	end
+
+	def chek_if_admin
+		render text: "Access denied", ststus: 403 unless params [:admin] #current_user.admin == true
 
 
 
