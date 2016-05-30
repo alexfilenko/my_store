@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessible :login
+	attr_accessor :login
 
 	has_one :cart
 end

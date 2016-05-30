@@ -70,11 +70,4 @@ before_filter :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 		render_404 unless @item
 	end
 
-	def check_if_admin
-		render_403 unless params[:admin]
-	end
-
-
-
-
 end
