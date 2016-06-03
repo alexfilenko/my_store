@@ -37,6 +37,7 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
     if @item.errors.empty?
       redirect_to action: "index" #redirect_to crop_image_item_path(@item)
     else
+      flash[:error] = "Jopa!"
       render "edit"
     end
   end
