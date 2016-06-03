@@ -35,9 +35,10 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 	def update
     @item.update_attributes(item_params)
     if @item.errors.empty?
+    	flash[:success] = "Good"
       redirect_to action: "index" #redirect_to crop_image_item_path(@item)
     else
-      flash[:error] = "Jopa!"
+      flash.now[:error] = "Jopa!"
       render "edit"
     end
   end
