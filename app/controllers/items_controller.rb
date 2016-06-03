@@ -5,7 +5,7 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 #before_filter :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 
 	def index
-		@items = Item.all#where(price: 100)
+		@items = Item.all #where("price: >= ?", params[:price_from])
 	end
 
 	def create
