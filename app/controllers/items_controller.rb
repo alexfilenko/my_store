@@ -31,22 +31,15 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 
 	def edit
 	end
-
-	def item_params
-    params.require(:item).permit(:name, :description, :price, :weight, :real, :image)
-  end
 	
-
 	def update
-		#@item.update_attributes(params[:item]).permit(:price, :name, :real, :weight, :description)
-		item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
-		@item = Item.update(item_params[:id])
-		if @item.errors.empty?
-			redirect_to item_path(@item)
-		else
-			render "edit"
-		end
-	end
+    @item.update_attributes(item_params)
+    if @item.errors.empty?
+      redirect_to action: "index" #redirect_to crop_image_item_path(@item)
+    else
+      render "edit"
+    end
+  end
 
 	def destroy
 		@item = Item.find(params[:id])
@@ -72,5 +65,9 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 		@item = Item.where(id: params[:id]).first
 		render_404 unless @item
 	end
+
+	def item_params
+    params.require(:item).permit(:name, :description, :price, :weight, :real, :image)
+  end
 
 end
