@@ -4,12 +4,8 @@ class ItemsController < ApplicationController
 before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 #before_filter :check_if_admin, only: [:edit, :update, :new, :create, :destroy]
 
-
-
-
-
 	def index
-		@items = Item.all
+		@items = Item.all#where(price: 100)
 	end
 
 	def create
@@ -44,7 +40,7 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 	def update
 		#@item.update_attributes(params[:item]).permit(:price, :name, :real, :weight, :description)
 		item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
-		@item = Item.update(item_params)
+		@item = Item.update(item_params[:id])
 		if @item.errors.empty?
 			redirect_to item_path(@item)
 		else
