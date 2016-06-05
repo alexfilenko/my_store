@@ -9,7 +9,7 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 	end
 
 	def create
-		item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
+		#item_params = params.require(:item).permit(:price, :name, :real, :weight, :description)
 		@item = Item.create(item_params)
 		if @item.errors.empty?
 			redirect_to item_path(@item)
