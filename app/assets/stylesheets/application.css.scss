@@ -13,7 +13,15 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
+
+
+
+body { padding: 1em; }
+
 @import "bootstrap";
 
-input[type=submit] {@extend .btn;}
+input[type=submit] { @extend .btn; @extend .btn-success; }
+.email { font-size: 80%; color: #555; margin: 1em; }
+
+.flash.success { background-color: green; color: #fff; padding: 1em; width: 100%; margin: 1em; border-radius: 7px; }
+.flash.error { background-color: red; color: #fff; padding: 1em; width: 100%; margin: 1em; border-radius: 7px; }
