@@ -1,6 +1,8 @@
-%h1= @item.name
+%h1= @page_title = @item.name
+
 
 %ul
-	%li= "#{@item.price} руб"
-	%li= urls_to_images(@item.description)
-	%li Вес: = "#{@item.weight} кг"
+  %li= "#{@item.price} руб."
+  %li= "#{@item.description}"
+  %li Вес: #{@item.weight} кг.
+  
