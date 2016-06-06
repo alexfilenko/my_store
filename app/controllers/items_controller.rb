@@ -70,6 +70,6 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
 
 	def item_params
     params.require(:item).permit(:name, :description, :price, :weight, :real, :image)
-  end
+  	end
 
 end
