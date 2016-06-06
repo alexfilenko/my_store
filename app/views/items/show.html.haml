@@ -4,5 +4,9 @@
 %ul
   %li= "#{@item.price} руб."
   %li= "#{@item.description}"
-  %li Вес: #{@item.weight} кг.
+  %li #{t("item.weight")}: #{@item.weight} кг.
+
+
+  = link_to "All Items", items_path
+= link_to "Edit Item", edit_item_path(@item)
   
