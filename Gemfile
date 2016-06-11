@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 group :test do
 	gem 'rspec-rails'
-	gem 'factory_girl'
+	gem 'factory_girl_rails'
 end
 
 # Use jquery as the JavaScript library
