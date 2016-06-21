@@ -15,7 +15,7 @@
 
 <% @items.each do |i| %>
 
-<tr>
+<tr data-item_id="<%= i.id %>">
   <td><%= i.id %></td>
   <td><%= link_to i.name, item_path(i) %></td>
   <td><%= i.price %> руб.</td>

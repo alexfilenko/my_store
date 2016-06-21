@@ -44,9 +44,9 @@ before_filter :find_item,	   only: [:show, :edit, :update, :destroy, :upvote ]
   end
 
 	def destroy
-		@item = Item.find(params[:id])
+		#@item = Item.find(params[:id])
 		@item.destroy
-		redirect_to action: "index"
+		render json: { success: true }
 	end
 
 	def upvote
